@@ -1,0 +1,24 @@
+body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        font-family: 'Roboto', sans-serif;
+        line-height: 28px;
+
+    }
+  
+    .red{
+        background-color:#ff9999;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+    }
+    .green{
+        background-color: #00ff99;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .blue{
+        background-color: #00cccc;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
