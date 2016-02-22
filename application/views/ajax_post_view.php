@@ -31,6 +31,7 @@ $this->session->userdata('userinfo')['user_id'];
 
     <!-- Custom CSS -->
      <link href="<?php echo  base_url('/assets/css/custom.css');?>" rel="stylesheet">
+      <link rel="stylesheet" href="<?php echo  base_url('/assets/font-awesome/css/font-awesome.min.css');?>" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,51 +45,7 @@ $this->session->userdata('userinfo')['user_id'];
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<?php echo  base_url('/welcome'); ?>">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
-                
-
-                <ul class="nav navbar-nav navbar-right">
-                    
-                   <li id="fat-menu" class="dropdown"> 
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 
-                       <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-                       <span class="caret"></span> 
-                       </a>     
-                       <ul class="dropdown-menu" aria-labelledby="drop3"> 
-                            <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li> 
-                            <li><a href="#"><span class="glyphicon glyphicon glyphicon-book" aria-hidden="true"></span> My Course</a></li> 
-                            <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li> 
-                             
-                            <li role="separator" class="divider"></li> 
-                            <li><a href="<?php echo base_url('/user/logout'); ?>"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
-                        </ul> 
-                    </li>
-
-                </ul>
-                <button type="button" class="glyphicon glyphicon glyphicon-search btn btn-default navbar-btn navbar-right collapsed" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    
-                </button>
-                
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group ">
-                      <input type="text" class="form-control" placeholder="Search with case title">
-                    </div>
-                    <button type="submit" class="btn btn-default">Search</button>
-                </form>
-            </div>
+    
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -126,9 +83,12 @@ $this->session->userdata('userinfo')['user_id'];
 
 
                     echo "<button type=\"button\" class=\"btn btn-default\" id=\"colorbtn\" onclick=\"highlight({$value->fact_id},'{$value->fact_color}');\">";
-                        echo $value->fact_name;
+                       echo "<span class=\"fa fa-1x fa-circle\" aria-hidden=\"true\" style=\"color:{$value->fact_hash_code}\"></span>";
+                        echo " ". $value->fact_name;
                     echo "</button>";       
                 }
+
+                
                 
                 echo "</div>";
                
@@ -198,15 +158,15 @@ $this->session->userdata('userinfo')['user_id'];
             <?php 
 
             echo "<div id=\"facts_box\">";
-
+            //print_r($select_case_report);
              foreach ($select_case_report['facts'] as $key => $value) {
-                echo "<div class=\"panel panel-success {$value->fact_select_id}\">";
-                echo "<div class=\"panel-heading\">Panel heading without title";
+                echo "<div class=\"panel panel-default  {$value->fact_select_id}\">";
+                echo "<div class=\"panel-heading {$value->fact_color}\">{$value->fact_name}";
                 echo "<button type=\"button\" class=\"close {$value->fact_select_id}\" onclick=\"deselect('#{$value->fact_select_id}')\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>";
 
                 echo "</div>";
                 echo "<div class=\"panel-body\">";
-                echo "<textarea  onchange=\"factnote(this.value,{$value->fact_select_id});\">{$value->fact_note}</textarea>";
+                echo "<textarea  class=\"form-control\" onchange=\"factnote(this.value,{$value->fact_select_id});\">{$value->fact_note}</textarea>";
                 
                 echo "</div></div>";
             }
@@ -307,7 +267,7 @@ jQuery.ajax({
                     {
                         //alert('test');
                         $('#facts_box').append(
-                            '<div class="panel panel-success ' + x+'" ><div class="panel-heading">Panel heading without title'+
+                            '<div class="panel panel-success ' + x+'" ><div class="panel-heading">issue'+
                             '<button type="button" class="close ' + x + ' " onclick="deselect(\'' + '#' + x + '\');" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
                             '</div><div class="panel-body">Panels content'+
                                 '<textarea  onchange="factnote(this.value,' + x + ');"></textarea>'
@@ -369,7 +329,7 @@ jQuery.ajax({
 //insert fact note
 
 window.factnote = function(factmsg,userfactid) {
-alert(userfactid);
+alert('confirm to add the note');
 
     jQuery.ajax({
 

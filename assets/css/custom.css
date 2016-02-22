@@ -7,18 +7,21 @@ body {
     }
   
     .red{
-        background-color:#ff9999;
+        background-color:#ff9999 !important;
         padding-top: 5px;
         padding-bottom: 5px;
 
     }
     .green{
-        background-color: #00ff99;
+        background-color: #00ff99 !important;
         padding-top: 5px;
         padding-bottom: 5px;
     }
     .blue{
-        background-color: #00cccc;
+        background-color: #00cccc !important;
         padding-top: 5px;
         padding-bottom: 5px;
+    }
+    .no-padding{
+        padding: 0px;
     }

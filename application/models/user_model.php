@@ -289,10 +289,24 @@ $query = $this->db->get();
 		
 }
 //get all the facts to view in ajax post 
-	function getFacts(){
-	$this->db->select('*');
-	$this->db->from('tbl_fact');
-	$query = $this->db->get();
+	function getFacts($fact_id=0){
+
+	
+	
+	if($fact_id != 0){
+		$condition = "fact_id =" . "'" . $fact_id . "'";
+		$this->db->select('*');
+		$this->db->from('tbl_fact');
+		$this->db->where($condition);
+		$query = $this->db->get();
+		}
+	else{
+		$this->db->select('*');
+		$this->db->from('tbl_fact');
+		$query = $this->db->get();
+
+	}
+	
 	if ($query->num_rows() > 0) {
 		return $query->result();
 	}

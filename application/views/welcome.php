@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Creative - Start Bootstrap Theme</title>
+    <title>Breif Wall</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="<?php echo  base_url('/assets/css/bootstrap.min.css');?>" type="text/css">
@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="<?php echo  base_url('/assets/css/animate.min.css');?>" type="text/css">
 
     <!-- Custom CSS -->
+    <!-- Custom CSS -->
+    
     <link rel="stylesheet" href="<?php echo  base_url('/assets/css/creative.css');?>" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -47,7 +49,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll no-padding" href="#page-top" style="margin-left: 50px;">
+                    <img width="70px" height="50px" alt="Brand" src="<?php echo  base_url('/assets/images/logo.png');?>">
+
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,9 +85,13 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-                <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+               
+                <br><br><br><br><br><br><br>
+                <p>
+                    For smart law students to score highest marks....
+                    A productivity tool for law students to streamline study time
+
+                </p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
             </div>
         </div>
@@ -94,8 +103,19 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">We've got what you need!</h2>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                    <p class="text-faded text-justify">
+                        Being two LLB undergraduates we know how difficult it’s for you to keep in memory the relevant case names and there content in subject wise. We are also going through the same mill. The traditional methodology of taking case brief is the best proven solution yet it consumes a lot of productive time of a law student. Time is very critical for any law student as there are other skills that need to be developed during the allotted time other than going through case briefs to memorize them.
+                    </p>
+                    <p class="text-faded text-justify">
+                        We believe we have the solution to address this issue in an innovative way. 
+                        The ‘Brief Wall’ a Productivity Tool developed by law students for law students.
+                    </p>    
+                        
+                    <p>
+                        We welcome you to experience the difference of taking your studies into new heights.
+
+                    </p>
+                    <a href="#" class="btn btn-default btn-xl">Qick Demo</a>
                 </div>
             </div>
         </div>
@@ -114,138 +134,54 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                        <i class="fa fa-4x fa-line-chart wow bounceIn text-primary"></i>
+                        <h3>Streamline Study Time</h3>
+                        <p class="text-muted text-justify">
+                           No need to find Case materials, highlighters, Tipp-Ex or spend time on organizing notes. Instead use Brief wall features like colour coded brief structure, automatic brief preparation, alteration by simply clicking a button and indexing according to your selected curriculum subject wise.
+
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                        <i class="fa fa-4x fa-gavel wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>Online Law Library</h3>
+                        <p class="text-muted text-justify">
+                        Have you ever find it difficult to carry your notes with you? May be the particular note wasn’t in your hand when you need it badly. Sounds familiar? Shift to Brief Wall. You can easily take it with you anywhere you go. It’s open around the world around the clock
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                        <i class="fa fa-4x fa-heart text-primary" data-wow-delay=".2s"></i>
+                        <h3>Environment Friendly</h3>
+                        <p class="text-muted text-justify">
+                            Are you Eco friendly? Go green with us. We are 100% paperless.
+                            Use Brief Wall to reduce usage of papers while you study.
+
+
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
+                        <i class="fa fa-4x fa-shield text-primary" data-wow-delay=".3s"></i>
+                        <h3>Safety</h3>
+                        <p class="text-muted text-justify">Your friend didn’t return your borrowed note yet? Or need to call the pest controller? With Brief Wall we takes care all your safety worries. Everything stored in cloud and only you can access your notes.
+</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- <section class="no-padding" id="portfolio">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="images/portfolio/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="images/portfolio/2.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="images/portfolio/3.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="images/portfolio/4.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="images/portfolio/5.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="images/portfolio/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>-->
+  
 
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                <h2>Join Brief Wall. It’s free.</h2>
+                <a href="user/register" class="btn btn-default btn-xl wow tada"> Get Started </a>
             </div>
         </div>
     </aside>
@@ -256,15 +192,18 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
                     <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <p>
+                        Thanks for visiting! We love to hear from our law student community. Feel free to contact us by phone or email anytime!
+
+                    </p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>123-456-6789</p>
+                    <p>071-369-1344</p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a href="mailto:your-email@your-domain.com">feedback@briewall.com</a></p>
                 </div>
             </div>
         </div>

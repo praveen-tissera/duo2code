@@ -35,11 +35,13 @@ Class User extends CI_Controller {
 	//$this->load->view('ajax_post_view'); 
 	$data['course_details'] = $this->user_model->read_course_details();	
 	$this->load->view('dashboard',$data);
+	
 	}
 
 	// Show registration page
 	public function register() {
 	$this->load->view('register');
+	$this->load->view('menu');
 	}
 
 	// Validate and store registration data in database
@@ -53,6 +55,7 @@ Class User extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('register');
+			$this->load->view('menu');
 		} 
 		else {
 			$data = array(
@@ -84,9 +87,11 @@ Class User extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			if(isset($this->session->userdata['userinfo'])){
 				$this->load->view('dashboard');
+				$this->load->view('menu');
 			}
 			else{
 				$this->load->view('register');
+				$this->load->view('menu');
 			}
 		} 
 		else {
@@ -122,6 +127,7 @@ Class User extends CI_Controller {
 				'error_loginmessage_display' => 'Invalid Username or Password'
 				);
 				$this->load->view('register', $data);
+				$this->load->view('menu');
 			}
 		}
 	}
@@ -134,11 +140,13 @@ Class User extends CI_Controller {
 		$this->session->unset_userdata('userinfo');
 		
 		$this->load->view('register');
+		$this->load->view('menu');
 		}
 
 	public function dashboard() {
 			$data['course_details'] = $this->user_model->read_course_details();	
 			$this->load->view('dashboard',$data);
+			$this->load->view('menu');
 
 			// add breadcrumbs
 				$this->breadcrumbs->push('Home', '/');
@@ -164,10 +172,12 @@ Class User extends CI_Controller {
 
 			if($data['select_course_details'] != false){	
 			$this->load->view('mycourse',$data);
+			$this->load->view('menu');
 			}
 			else{
 				$data['select_course_details'] = 'No Level found for this course';
 				$this->load->view('mycourse',$data);
+				$this->load->view('menu');
 			}
 		}
 	public function courseSubject($levelid) {
@@ -190,10 +200,12 @@ Class User extends CI_Controller {
 
 			if($data['select_subject_details'] != false){	
 			$this->load->view('mysubject',$data);
+			$this->load->view('menu');
 			}
 			else{
 				$data['select_subject_details'] = 'No Subjects found for selected level';
 				$this->load->view('mysubject',$data);
+				$this->load->view('menu');
 			}
 		}
 	public function subjectCase($subjectid) {
@@ -219,6 +231,7 @@ Class User extends CI_Controller {
 			if($data['select_case_details'] != false){	
 				$data['subjectid'] = $subjectid; 
 				$this->load->view('mycaseses',$data);
+				$this->load->view('menu');
 			}
 			else{
 				$data['select_case_details'] = 'No Case found for selected Subject';
@@ -230,17 +243,29 @@ Class User extends CI_Controller {
 	
 
 			$data['select_case_report'] = $this->user_model->read_select_course_subject_case_details_report($reportid,$this->session->userdata('userinfo')['user_id'],$subjectid);
-			
+			//print_r($data['select_case_report']['facts']);
+			foreach ($data['select_case_report']['facts'] as $key => $value) {
+				
+				$result_fact_details = $this->user_model->getFacts($value->fact_id);
+				//$result_fact_name = $this->user_model->getFacts($value->fact_name);
+				//print_r($result_fact_details[0]->fact_name);
+				//array_push($value, $result_fact_color);
+				$value->fact_color=$result_fact_details[0]->fact_color;
+				$value->fact_name=$result_fact_details[0]->fact_name;
+				//print_r($value);
+			}
 			$data['facts'] = $this->user_model->getFacts();
 			if($data['select_case_report'] != false && $data['facts'] != false){	
 				$data['subjectid'] = $subjectid;
 				
 				$this->load->view('ajax_post_view',$data);
+				$this->load->view('menu');
 			}
 			else{
 				$data['select_case_report'] = 'No Case found for selected Subject';
 				
 				$this->load->view('ajax_post_view',$data);
+				$this->load->view('menu');
 			}
 
 
@@ -349,6 +374,7 @@ Class User extends CI_Controller {
 			
 			//if($data['result_facts'] != false){
 				$this->load->view('full_brief',$data);
+				$this->load->view('menu');
 				
 			//}
 			
